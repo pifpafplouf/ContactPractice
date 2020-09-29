@@ -1,0 +1,9 @@
+package com.mmxx.contact.config;
+
+public class DataBaseInfo {	
+	
+	public static String driver = "com.mysql.jdbc.Driver";
+	public static String url = "jdbc:mysql://192.168.1.110:3306/myDataBase?autoReconnect=true&useSSL=false";
+	public static String user = "myUser";
+	public static String password = "myPassword";
+}
