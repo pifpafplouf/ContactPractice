@@ -12,6 +12,8 @@ import com.mmxx.contact.dao.ContactDAO;
 import com.mmxx.contact.dao.ContactDAOImpl;
 import com.mmxx.contact.model.Contact;
 
+import com.mmxx.contact.config.DataBaseInfo;
+
 class ContactDAOTest {
 	
 	private DriverManagerDataSource dataSource;
@@ -45,8 +47,7 @@ class ContactDAOTest {
 	}
 
 	@Test
-	void testSave() {
-		System.out.println("--- testSave() --- ");
+	void testSave() {		
 		Contact contact = new Contact(4, "Trevor Test", "trevor.test@mail.test", "Test State, TT", "987 654-3212");
 		int result = dao.save(contact);
 		
@@ -54,8 +55,7 @@ class ContactDAOTest {
 	}
 
 	@Test
-	void testUpdate() {
-		System.out.println("--- testUpdate() --- ");
+	void testUpdate() {		
 		Contact contact = new Contact(3, "Dean Test", "Dean.test@mail.test", "3eme avenue des tests State, TT", "987 654-3213");
 		int result = dao.update(contact);
 		
@@ -63,8 +63,7 @@ class ContactDAOTest {
 	}
 
 	@Test
-	void testGet() {
-		System.out.println("--- testGet() --- ");
+	void testGet() {		
 		Integer id = 1;
 		
 		Contact contact = dao.get(id);
@@ -77,18 +76,14 @@ class ContactDAOTest {
 
 	@Test
 	void testDelete() {
-		System.out.println("--- testDelete() --- ");
 		Integer id = 2;
 		int result = dao.delete(id);
 		
-		assertTrue(result > 0);
-		
-		
+		assertTrue(result > 0);		
 	}
 
 	@Test
 	void testList() {
-		System.out.println("--- testList() --- ");
 		List<Contact> listContacts = dao.list();
 		
 		for (Contact aContact : listContacts) {

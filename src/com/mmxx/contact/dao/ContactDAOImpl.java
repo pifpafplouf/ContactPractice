@@ -24,8 +24,6 @@ public class ContactDAOImpl implements ContactDAO {
 	public int save(Contact c) {
 		String sql = "";
 		
-		System.out.println("DEBUG: c: " + c.toString());
-		
 		if (c.getId() == null) {
 			sql = "INSERT INTO contact (name, email, address, phone) VALUES (?, ?, ?, ?)";
 			return jdbcTemplate.update(sql, c.getName(), c.getEmail(), c.getAddress(), c.getPhone());
